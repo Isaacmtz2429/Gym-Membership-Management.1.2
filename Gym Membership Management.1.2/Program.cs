@@ -12,6 +12,9 @@ namespace Gym_Membership_Management._1._2
     internal class GymManagement
     {
         static List<member> members = new List<member>();
+
+        public static object MemberName { get; private set; }
+
         static void Main(string[] args)
         {
             GymManagement gymManagement = new GymManagement();
@@ -59,6 +62,12 @@ namespace Gym_Membership_Management._1._2
                 }
             }
         }
+
+        private static void EditMembers()
+        {
+            throw new NotImplementedException();
+        }
+
         static void AddMember()
         {
             try
@@ -116,6 +125,22 @@ namespace Gym_Membership_Management._1._2
             catch
             {
                 Console.WriteLine("ERROR. Please try again");
+            }
+        }
+        static void DeleteMember()
+        {
+            Console.Write("Enter member's name to delete:");
+            string removeMemberName = Console.ReadLine();
+            int indexToRemove = members.FindIndex(m => m.Name == removeMemberName);
+
+            if (indexToRemove < 0)
+            {
+                members.RemoveAt(indexToRemove);
+                Console.WriteLine("Member deleted successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Member not found. please try again.");
             }
         }
     }
