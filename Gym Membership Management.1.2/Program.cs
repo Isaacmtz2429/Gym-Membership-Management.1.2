@@ -11,13 +11,10 @@ namespace Gym_Membership_Management._1._2
 {
     internal class GymManagement
     {
-        static List<member> members = new List<member>();
-
-        public static object MemberName { get; private set; }
-
+        static List<Member> members = new List<Member>();
         static void Main(string[] args)
         {
-            GymManagement gymManagement = new GymManagement();
+
 
             while (true)
             {
@@ -30,7 +27,7 @@ namespace Gym_Membership_Management._1._2
                     Console.WriteLine("3. Edit Member");
                     Console.WriteLine("4. Delete Member");
                     Console.WriteLine("5. Exit");
-                    Console.Write("Yout choice: ");
+                    Console.Write("Your choice: ");
 
                     string choice = Console.ReadLine();
 
@@ -63,11 +60,6 @@ namespace Gym_Membership_Management._1._2
             }
         }
 
-        private static void EditMembers()
-        {
-            throw new NotImplementedException();
-        }
-
         static void AddMember()
         {
             try
@@ -75,12 +67,14 @@ namespace Gym_Membership_Management._1._2
                 Console.Write("Please enter member's name: ");
                 string memberName = Console.ReadLine();
 
-                member newMember = new member { Name = memberName };
-                member.Add(newMember);
+                Member newMember = new Member { Name = memberName };
+                members.Add(newMember);
                 Console.WriteLine("Member added!");
             }
             catch (Exception ex)
-            { Console.WriteLine($"Error: {ex.Message}"); }
+            { 
+                Console.WriteLine($"Error: {ex.Message}"); 
+            }
         }
         static void ViewMembers()
         {
@@ -97,7 +91,7 @@ namespace Gym_Membership_Management._1._2
                 }
             }
         }
-        static void EditMember()
+        static void EditMembers()
         {
             try 
             {
