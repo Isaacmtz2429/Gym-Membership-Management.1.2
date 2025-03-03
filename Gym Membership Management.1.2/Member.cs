@@ -9,7 +9,7 @@ namespace Gym_Membership_Management._1._2
     /// <summary>
     /// Created Dervied class and giving it properties and behaviors
     /// </summary>
-    class Member : MemberBase
+    class member : MemberBase
     {
         private string name;
         public string Name
@@ -27,6 +27,12 @@ namespace Gym_Membership_Management._1._2
                 }
             }
         }
+
+        internal static void Add(member newMember)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void DisplayDetails() // Details of the gym member
         {
             Console.WriteLine($"Member Name: {Name}");

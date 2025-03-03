@@ -59,5 +59,35 @@ namespace Gym_Membership_Management._1._2
                 }
             }
         }
+
+        public void AddMember()
+        {
+            try
+            {
+                Console.Write("Please enter member's name: ");
+                string memberName = Console.ReadLine();
+
+                member newMember = new member { Name = memberName };
+                member.Add(newMember);
+                Console.WriteLine("Member added!");
+            }
+            catch (Exception ex)
+            { Console.WriteLine($"Error: {ex.Message}"); }
+        }
+        public void ViewMembers()
+        {
+            if (members.Count ==0)
+            {
+                Console.WriteLine("No members found");
+            }
+            else
+            {
+                Console.WriteLine("\nMember's List:");
+                foreach (var member in members)
+                {
+                    member.DisplayDetails();
+                }
+            }
+        }
     }
 }
