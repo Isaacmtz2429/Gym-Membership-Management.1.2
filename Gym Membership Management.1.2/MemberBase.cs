@@ -9,5 +9,6 @@ namespace Gym_Membership_Management._1._2
     abstract class MemberBase
     {
         public abstract void DisplayDetails();
+
     }
 }
