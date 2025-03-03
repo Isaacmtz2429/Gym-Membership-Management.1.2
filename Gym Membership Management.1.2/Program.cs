@@ -21,6 +21,7 @@ namespace Gym_Membership_Management._1._2
                 try
                 {
                     Console.WriteLine("Welcome to your Gym Membership Management!");
+                    Console.WriteLine("press enter to continue");
                     Console.ReadLine();
                     Console.WriteLine("1. Add Member");
                     Console.WriteLine("2. View Member");
