@@ -11,7 +11,7 @@ namespace Gym_Membership_Management._1._2
 {
     internal class GymManagement
     {
-        static List<Member> members = new List<Member>();
+        static List<member> members = new List<member>();
         static void Main(string[] args)
         {
             GymManagement gymManagement = new GymManagement();
@@ -59,8 +59,7 @@ namespace Gym_Membership_Management._1._2
                 }
             }
         }
-
-        public void AddMember()
+        static void AddMember()
         {
             try
             {
@@ -74,9 +73,9 @@ namespace Gym_Membership_Management._1._2
             catch (Exception ex)
             { Console.WriteLine($"Error: {ex.Message}"); }
         }
-        public void ViewMembers()
+        static void ViewMembers()
         {
-            if (members.Count ==0)
+            if (members.Count == 0)
             {
                 Console.WriteLine("No members found");
             }
@@ -87,6 +86,36 @@ namespace Gym_Membership_Management._1._2
                 {
                     member.DisplayDetails();
                 }
+            }
+        }
+        static void EditMember()
+        {
+            try
+            {
+                Console.Write("Enter member's current name: ");
+                if (int.TryParse(Console.ReadLine(), out int index) && index < members.Count)
+                {
+                    Console.Write("Enter new name for the member: ");
+                    string newName = Console.ReadLine();
+
+                    if (!string.IsNullOrWhiteSpace(newName))
+                    {
+                        members[index].Name = newName;
+                        Console.WriteLine("Member's Name updated successfully!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Name cannot be empty. Please try again");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please try again");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("ERROR. Please try again");
             }
         }
     }
