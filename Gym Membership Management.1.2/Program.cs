@@ -99,7 +99,7 @@ namespace Gym_Membership_Management._1._2
         }
         static void EditMember()
         {
-            try
+            try 
             {
                 Console.Write("Enter member's current name: ");
                 if (int.TryParse(Console.ReadLine(), out int index) && index < members.Count)
